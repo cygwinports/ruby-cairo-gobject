@@ -1,11 +1,17 @@
 inherit rubygem
 
 NAME="ruby-cairo-gobject"
-VERSION=2.0.2
+VERSION=2.2.0
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby Cairo GObject bindings"
 DESCRIPTION="Ruby/CairoGObject is a Ruby binding of cairo-gobject."
 HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
 
-DEPS_PATH="/usr/lib/ruby/gems/${RUBY_VERSION}/gems/cairo-*/lib:/usr/lib/ruby/gems/${RUBY_VERSION}/gems/glib2-*/lib"
+PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
+ruby_cairo_gobject_CONTENTS=${RUBYGEM_EXTDIR#/}" "${RUBYGEM_INSTDIR#/}" "${RUBYGEM_SPEC#/}
+ruby_cairo_gobject_devel_REQUIRES=${NAME}
+ruby_cairo_gobject_devel_CONTENTS="usr/lib/pkgconfig/"
+ruby_cairo_gobject_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
+
+DEPS_PATH="${RUBYGEM_EXTDIR%/*}/cairo-1*:${RUBYGEM_EXTDIR%/*}/glib2-*"
