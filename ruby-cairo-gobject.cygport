@@ -1,7 +1,7 @@
 inherit rubygem
 
 NAME="ruby-cairo-gobject"
-VERSION=3.1.1
+VERSION=3.1.8
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby Cairo GObject bindings"
