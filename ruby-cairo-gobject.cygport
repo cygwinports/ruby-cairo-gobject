@@ -1,7 +1,7 @@
 inherit rubygem
 
 NAME="ruby-cairo-gobject"
-VERSION=3.1.8
+VERSION=3.2.9
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby Cairo GObject bindings"
@@ -13,5 +13,7 @@ ruby_cairo_gobject_CONTENTS=${RUBYGEM_EXTDIR#/}" "${RUBYGEM_INSTDIR#/}" "${RUBYG
 ruby_cairo_gobject_devel_REQUIRES=${NAME}
 ruby_cairo_gobject_devel_CONTENTS="usr/lib/pkgconfig/"
 ruby_cairo_gobject_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
+# no API for other modules
+PKG_IGNORE="usr/lib/libruby-cairo_gobject.a"
 
 DEPS_PATH="${RUBYGEM_EXTDIR%/*}/cairo-1*:${RUBYGEM_EXTDIR%/*}/glib2-*"
